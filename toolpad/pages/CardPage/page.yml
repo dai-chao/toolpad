@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: page
+spec:
+  id: G3cSwOP
+  title: CardPage
+  display: shell
+  content:
+    - component: PageRow
+      name: pageRow
+      children:
+        - component: codeComponent.Card
+          name: Card
+          props:
+            height: 24
+            type: card
+            verticalAlign: start
+            type1: start
+            onClick:
+              $$navigationAction:
+                page: nQHSDs0
+                parameters: {}
+            search: true
+            selectDataList: 商品列表
+            image: 商品图片
+            title: 品牌名称
+            description: 商品重量
+            add: true
+            isEdit: true
+            isDetail: true
+            style: card

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: page
+spec:
+  id: nQHSDs0
+  title: Detail
+  display: shell
+  content:
+    - component: PageRow
+      name: pageRow
+      children:
+        - component: codeComponent.Detail
+          name: codeComponent_Detail
+          props:
+            dataKey: CARD_DETAIL_PARAMS
+  parameters:
+    - name: data
+      value: "{}"

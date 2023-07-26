@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: page
+spec:
+  id: sTY5tEm
+  title: page4
+  display: shell
+  content:
+    - component: PageRow
+      name: pageRow
+      children:
+        - component: DataGrid
+          name: dataGrid
+          props:
+            rows:
+              $$jsExpression: |
+                listQuery.data.rows
+            columns:
+              - field: row_id
+                type: string
+                width: 248
+              - field: mznsxjlpdrqb
+                type: json
+              - field: pqosdwkflchm
+                type: json
+              - field: zvnytbxqisuo
+                type: json
+              - field: create_time
+                type: string
+                width: 193
+              - field: update_time
+                type: string
+                width: 171
+              - field: vpcaxqlduzgn
+                type: string
+            height: 518
+  queries:
+    - name: listQuery
+      query:
+        kind: rest
+        url: https://api3.windeal.cn/v1/api/application/datatable/row/query?token=9268e00c8e471df52a2b6b6e620aca2e&uid=qh0279qr&company_id=pc1265&userid=qh0279qr&user_id=qh0279qr&xuid=pc1265
+        headers: []
+        body:
+          kind: raw
+          content: '{"fields":{"group_id":"lbQKVu0wGeTkaXA4","project_type":"self","project_id":"CADKWL1686813622980511243","table_id":"DCITZV1686813622987959146","company_id":"pc1265"},"action_id":3504,"no_flatten":true,"isend":true,"uid":"qh0279qr","user_id":"qh0279qr","company_id":"pc1265"}'
+          contentType: application/json
+        method: POST
+        transform: return data.Data
+        transformEnabled: true
+        searchParams: []

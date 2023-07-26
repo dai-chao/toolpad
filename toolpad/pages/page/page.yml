@@ -1,0 +1,625 @@
+apiVersion: v1
+kind: page
+spec:
+  id: RIc-qt-
+  title: Default page
+  content:
+    - component: PageRow
+      name: pageRow1
+      children:
+        - component: Paper
+          name: paper
+          children:
+            - component: PageRow
+              name: pageRow4
+              children:
+                - component: Text
+                  name: text
+                  layout:
+                    horizontalAlign: center
+                  props:
+                    value: 页面标题
+                    variant: h2
+                    mode: link
+                    href: https://image.baidu.com/search/index?tn=baiduimage&ct=201326592&lm=-1&cl=2&ie=gb18030&word=%CD%BC%C6%AC&fr=ala&ala=1&alatpl=normal&pos=0&dyTabStr=MTEsMCwzLDYsNCwxLDIsNSw4LDcsOQ%3D%3D
+          layout:
+            verticalAlign: start
+          props:
+            elevation: 10
+    - component: PageRow
+      name: pageRow2
+      children:
+        - component: Tabs
+          name: tabs
+          layout:
+            horizontalAlign: center
+    - component: PageRow
+      name: pageRow
+      children:
+        - component: Image
+          name: image1
+          layout:
+            horizontalAlign: start
+          props:
+            fit: none
+            src: https://img2.baidu.com/it/u=483398814,2966849709&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500
+        - component: Image
+          name: image2
+          props:
+            src: https://img2.baidu.com/it/u=638285213,1746517464&fm=253&fmt=auto&app=120&f=JPEG?w=1422&h=800
+            fit: none
+        - component: Image
+          name: image
+          layout:
+            horizontalAlign: start
+          props:
+            src: https://img2.baidu.com/it/u=1361506290,4036378790&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500
+            fit: none
+    - component: PageRow
+      name: pageRow14
+      children:
+        - component: codeComponent.Testcomponent
+          name: codeComponent_Testcomponent
+          props:
+            color: red
+            fontSize: 50
+            age: 100
+    - component: PageRow
+      name: pageRow12
+      children:
+        - component: codeComponent.HelloWorld
+          name: codeComponent_HelloWorld
+          props:
+            msg: Hello world!,这是一个自定义组件
+    - component: PageRow
+      name: pageRow7
+      children:
+        - component: DataGrid
+          name: dataGrid
+          props:
+            columns:
+              - field: driverName
+                type: string
+                align: center
+                width: 239
+              - field: phone
+                type: string
+                width: 228
+              - field: idCardNo
+                type: string
+                width: 235
+              - field: maintenanceTime
+                type: string
+                width: 300
+            density: compact
+            rowIdField: phone
+            rows:
+              - pkid: 9914
+                userId: "200181423"
+                driverHeadImageUrl: ""
+                driverName: 杨俊锋
+                idCardNo: 410***013
+                phone: "15396151026"
+                realAuthenticationStatus: AUTH_TWO_ELEMENTS
+                appLocationStatus: uninstall
+                phoneLocationFlg: 1
+                baseStationPhone: "13559224581"
+                appPercent: null
+                phoneLocationPercent: null
+                isContractSign: NO
+                contractType: null
+                lastDetailAddress: ""
+                lastPositionTime: null
+                driverClass: PERSON_DRIVER
+                licenseType: A2
+                rateLevel: null
+                rateScore: null
+                driverVehicleInfoResponseDTOList: []
+                driverPathList: []
+                sourceSystem: TMS_WEB
+                auditStatus: 0
+                maintenanceUid: P14052
+                maintenanceMan: 蔡玉米
+                maintenanceTime: 2023-07-03 14:59:16
+                createUid: P14052
+                createTime: 2023-07-03 14:59:04
+                createMan: 蔡玉米
+                fastAudit: 0
+                qualificationCertificateAuditStatus: 0
+                balanceAmount: "0"
+                cashPledgeFlag: 0
+                dispatchStatus: null
+                phoneEncrypt: "15396151026"
+                baseStationPhoneEncrypt: "13559224581"
+              - pkid: 9913
+                userId: "200086737"
+                driverHeadImageUrl: ""
+                driverName: "111"
+                idCardNo: null
+                phone: "13159278515"
+                realAuthenticationStatus: NOT_AUTH
+                appLocationStatus: uninstall
+                phoneLocationFlg: 0
+                baseStationPhone: "13159278515"
+                appPercent: null
+                phoneLocationPercent: null
+                isContractSign: NO
+                contractType: null
+                lastDetailAddress: ""
+                lastPositionTime: null
+                driverClass: PERSON_DRIVER
+                licenseType: null
+                rateLevel: null
+                rateScore: null
+                driverVehicleInfoResponseDTOList: null
+                driverPathList: []
+                sourceSystem: TMS_WEB
+                auditStatus: 0
+                maintenanceUid: ""
+                maintenanceMan: ""
+                maintenanceTime: 2023-06-08 14:00:24
+                createUid: P12792
+                createTime: 2023-06-08 13:57:09
+                createMan: 骆炳聪
+                fastAudit: 0
+                qualificationCertificateAuditStatus: 0
+                balanceAmount: "0"
+                cashPledgeFlag: 0
+                dispatchStatus: null
+                phoneEncrypt: "13159278515"
+                baseStationPhoneEncrypt: "13159278515"
+              - pkid: 9912
+                userId: "200181558"
+                driverHeadImageUrl: ""
+                driverName: 吴晓伟
+                idCardNo: 350***677
+                phone: "18206062171"
+                realAuthenticationStatus: AUTH_THREE_ELEMENTS
+                appLocationStatus: enable
+                phoneLocationFlg: 0
+                baseStationPhone: "18206062171"
+                appPercent: "90.00"
+                phoneLocationPercent: "0.00"
+                isContractSign: YES
+                contractType: null
+                lastDetailAddress: 福建省厦门市集美区后溪镇诚毅北大街73号软件园体育中心
+                lastPositionTime: 2023-06-28 16:08:41
+                driverClass: PERSON_DRIVER
+                licenseType: C1
+                rateLevel: null
+                rateScore: null
+                driverVehicleInfoResponseDTOList:
+                  - driverVehicleRelationPkid: null
+                    vehicleId: 19132
+                    oneCarPhotoFile: null
+                    vehicleNo: 闽D712AT
+                    ownerFlg: null
+                    declarationFile: null
+                    usedFlg: null
+                    vehicleAndOwner: null
+                  - driverVehicleRelationPkid: null
+                    vehicleId: 19039
+                    oneCarPhotoFile: null
+                    vehicleNo: 闽D25836
+                    ownerFlg: null
+                    declarationFile: null
+                    usedFlg: null
+                    vehicleAndOwner: null
+                  - driverVehicleRelationPkid: null
+                    vehicleId: 19135
+                    oneCarPhotoFile: null
+                    vehicleNo: 闽D712AW
+                    ownerFlg: null
+                    declarationFile: null
+                    usedFlg: null
+                    vehicleAndOwner: null
+                  - driverVehicleRelationPkid: null
+                    vehicleId: 19133
+                    oneCarPhotoFile: null
+                    vehicleNo: 豫QH3376
+                    ownerFlg: null
+                    declarationFile: null
+                    usedFlg: null
+                    vehicleAndOwner: null
+                driverPathList:
+                  - 3次，福建省福州市<->福建省厦门市
+                sourceSystem: TMS_APP
+                auditStatus: 2
+                maintenanceUid: "200181558"
+                maintenanceMan: ""
+                maintenanceTime: 2023-06-28 16:08:51
+                createUid: "200181558"
+                createTime: 2023-05-25 16:45:24
+                createMan: ""
+                fastAudit: 1
+                qualificationCertificateAuditStatus: 0
+                balanceAmount: "0.01"
+                cashPledgeFlag: 1
+                dispatchStatus: null
+                phoneEncrypt: "18206062171"
+                baseStationPhoneEncrypt: "18206062171"
+              - pkid: 9911
+                userId: "200174624"
+                driverHeadImageUrl: ""
+                driverName: 邹杰
+                idCardNo: 350***752
+                phone: "18192323461"
+                realAuthenticationStatus: AUTH_THREE_ELEMENTS
+                appLocationStatus: enable
+                phoneLocationFlg: 0
+                baseStationPhone: "18192323461"
+                appPercent: null
+                phoneLocationPercent: null
+                isContractSign: YES
+                contractType: null
+                lastDetailAddress: 香港特别行政区中西区民祥街交易广场平台
+                lastPositionTime: 2023-06-29 10:48:47
+                driverClass: PERSON_DRIVER
+                licenseType: C1
+                rateLevel: null
+                rateScore: null
+                driverVehicleInfoResponseDTOList: null
+                driverPathList: []
+                sourceSystem: TMS_APP
+                auditStatus: 1
+                maintenanceUid: P19403
+                maintenanceMan: 邹杰
+                maintenanceTime: 2023-06-29 10:48:56
+                createUid: "200174624"
+                createTime: 2023-05-18 15:51:57
+                createMan: ""
+                fastAudit: 1
+                qualificationCertificateAuditStatus: 0
+                balanceAmount: "0.01"
+                cashPledgeFlag: 1
+                dispatchStatus: null
+                phoneEncrypt: "18192323461"
+                baseStationPhoneEncrypt: "18192323461"
+              - pkid: 9910
+                userId: "200181555"
+                driverHeadImageUrl: ""
+                driverName: 杨俊锋
+                idCardNo: 410***013
+                phone: "17306008218"
+                realAuthenticationStatus: AUTH_TWO_ELEMENTS
+                appLocationStatus: disable
+                phoneLocationFlg: 1
+                baseStationPhone: "17306008218"
+                appPercent: "0.00"
+                phoneLocationPercent: "0.00"
+                isContractSign: YES
+                contractType: null
+                lastDetailAddress: 福建省厦门市集美区后溪镇315乡道源达驾校
+                lastPositionTime: 2023-06-25 10:29:35
+                driverClass: PERSON_DRIVER
+                licenseType: A2
+                rateLevel: null
+                rateScore: null
+                driverVehicleInfoResponseDTOList:
+                  - driverVehicleRelationPkid: null
+                    vehicleId: 19129
+                    oneCarPhotoFile: null
+                    vehicleNo: 闽E55708
+                    ownerFlg: null
+                    declarationFile: null
+                    usedFlg: null
+                    vehicleAndOwner: null
+                  - driverVehicleRelationPkid: null
+                    vehicleId: null
+                    oneCarPhotoFile: null
+                    vehicleNo: null
+                    ownerFlg: null
+                    declarationFile: null
+                    usedFlg: null
+                    vehicleAndOwner: null
+                  - driverVehicleRelationPkid: null
+                    vehicleId: 10665
+                    oneCarPhotoFile: null
+                    vehicleNo: 冀EH7125
+                    ownerFlg: null
+                    declarationFile: null
+                    usedFlg: null
+                    vehicleAndOwner: null
+                driverPathList:
+                  - 1次，福建省泉州市<->福建省泉州市
+                sourceSystem: TMS_APP
+                auditStatus: 0
+                maintenanceUid: "200181555"
+                maintenanceMan: ""
+                maintenanceTime: 2023-06-25 10:29:35
+                createUid: "200181555"
+                createTime: 2023-05-16 17:03:45
+                createMan: ""
+                fastAudit: 0
+                qualificationCertificateAuditStatus: 0
+                balanceAmount: "0"
+                cashPledgeFlag: 0
+                dispatchStatus: null
+                phoneEncrypt: "17306008218"
+                baseStationPhoneEncrypt: "17306008218"
+              - pkid: 9909
+                userId: "200106677"
+                driverHeadImageUrl: ""
+                driverName: 吴培金
+                idCardNo: null
+                phone: "17850506596"
+                realAuthenticationStatus: NOT_AUTH
+                appLocationStatus: uninstall
+                phoneLocationFlg: 0
+                baseStationPhone: "17850506596"
+                appPercent: null
+                phoneLocationPercent: null
+                isContractSign: NO
+                contractType: null
+                lastDetailAddress: ""
+                lastPositionTime: null
+                driverClass: PERSON_DRIVER
+                licenseType: null
+                rateLevel: null
+                rateScore: null
+                driverVehicleInfoResponseDTOList: null
+                driverPathList: []
+                sourceSystem: TMS_WEB
+                auditStatus: 0
+                maintenanceUid: ""
+                maintenanceMan: ""
+                maintenanceTime: 2023-05-10 14:45:26
+                createUid: P12787
+                createTime: 2023-05-10 14:40:29
+                createMan: 吴培金
+                fastAudit: 0
+                qualificationCertificateAuditStatus: 0
+                balanceAmount: "0"
+                cashPledgeFlag: 0
+                dispatchStatus: null
+                phoneEncrypt: "17850506596"
+                baseStationPhoneEncrypt: "17850506596"
+              - pkid: 9887
+                userId: "200170868"
+                driverHeadImageUrl: ""
+                driverName: 曹晓斌
+                idCardNo: null
+                phone: "15501159128"
+                realAuthenticationStatus: NOT_AUTH
+                appLocationStatus: disable
+                phoneLocationFlg: 0
+                baseStationPhone: "15501159128"
+                appPercent: null
+                phoneLocationPercent: null
+                isContractSign: YES
+                contractType: null
+                lastDetailAddress: "[]"
+                lastPositionTime: 2023-06-07 18:00:03
+                driverClass: PERSON_DRIVER
+                licenseType: null
+                rateLevel: null
+                rateScore: null
+                driverVehicleInfoResponseDTOList: null
+                driverPathList: []
+                sourceSystem: TMS_WEB
+                auditStatus: 0
+                maintenanceUid: P13652
+                maintenanceMan: 曹晓斌
+                maintenanceTime: 2023-06-07 18:00:03
+                createUid: P13652
+                createTime: 2023-04-25 15:46:38
+                createMan: 曹晓斌
+                fastAudit: 0
+                qualificationCertificateAuditStatus: 0
+                balanceAmount: "0.01"
+                cashPledgeFlag: 1
+                dispatchStatus: null
+                phoneEncrypt: "15501159128"
+                baseStationPhoneEncrypt: "15501159128"
+              - pkid: 9863
+                userId: "200181420"
+                driverHeadImageUrl: ""
+                driverName: 蔡玉
+                idCardNo: null
+                phone: "15960652517"
+                realAuthenticationStatus: NOT_AUTH
+                appLocationStatus: uninstall
+                phoneLocationFlg: 0
+                baseStationPhone: "15960652517"
+                appPercent: null
+                phoneLocationPercent: null
+                isContractSign: NO
+                contractType: null
+                lastDetailAddress: ""
+                lastPositionTime: null
+                driverClass: PERSON_DRIVER
+                licenseType: null
+                rateLevel: null
+                rateScore: null
+                driverVehicleInfoResponseDTOList: null
+                driverPathList: []
+                sourceSystem: TMS_WEB
+                auditStatus: 0
+                maintenanceUid: ""
+                maintenanceMan: ""
+                maintenanceTime: 2023-03-28 19:45:24
+                createUid: P14052
+                createTime: 2023-03-28 19:45:15
+                createMan: 蔡玉米
+                fastAudit: 0
+                qualificationCertificateAuditStatus: 0
+                balanceAmount: "0"
+                cashPledgeFlag: 0
+                dispatchStatus: null
+                phoneEncrypt: "15960652517"
+                baseStationPhoneEncrypt: "15960652517"
+              - pkid: 9860
+                userId: "200106669"
+                driverHeadImageUrl: ""
+                driverName: 蔡作品
+                idCardNo: null
+                phone: "13559224599"
+                realAuthenticationStatus: NOT_AUTH
+                appLocationStatus: uninstall
+                phoneLocationFlg: 0
+                baseStationPhone: "13559224599"
+                appPercent: null
+                phoneLocationPercent: null
+                isContractSign: NO
+                contractType: null
+                lastDetailAddress: ""
+                lastPositionTime: null
+                driverClass: PERSON_DRIVER
+                licenseType: null
+                rateLevel: null
+                rateScore: null
+                driverVehicleInfoResponseDTOList: null
+                driverPathList: []
+                sourceSystem: TMS_MOBILE_ADMIN
+                auditStatus: 0
+                maintenanceUid: ""
+                maintenanceMan: ""
+                maintenanceTime: 2023-03-21 17:25:24
+                createUid: P14052
+                createTime: 2023-03-21 17:21:50
+                createMan: 蔡玉米
+                fastAudit: 0
+                qualificationCertificateAuditStatus: 0
+                balanceAmount: "0"
+                cashPledgeFlag: 0
+                dispatchStatus: null
+                phoneEncrypt: "13559224599"
+                baseStationPhoneEncrypt: "13559224599"
+              - pkid: 9857
+                userId: "200181179"
+                driverHeadImageUrl: ""
+                driverName: 芭乐
+                idCardNo: null
+                phone: "17306068219"
+                realAuthenticationStatus: NOT_AUTH
+                appLocationStatus: uninstall
+                phoneLocationFlg: 0
+                baseStationPhone: "17306068219"
+                appPercent: null
+                phoneLocationPercent: null
+                isContractSign: NO
+                contractType: null
+                lastDetailAddress: ""
+                lastPositionTime: null
+                driverClass: PERSON_DRIVER
+                licenseType: null
+                rateLevel: null
+                rateScore: null
+                driverVehicleInfoResponseDTOList: null
+                driverPathList: []
+                sourceSystem: TMS_WECHAT_APPLETS
+                auditStatus: 0
+                maintenanceUid: ""
+                maintenanceMan: ""
+                maintenanceTime: 2023-03-21 15:55:24
+                createUid: "200181179"
+                createTime: 2023-03-21 15:54:47
+                createMan: ""
+                fastAudit: 0
+                qualificationCertificateAuditStatus: 0
+                balanceAmount: "0"
+                cashPledgeFlag: 0
+                dispatchStatus: null
+                phoneEncrypt: "17306068219"
+                baseStationPhoneEncrypt: "17306068219"
+    - component: PageRow
+      name: pageRow6
+      children:
+        - component: Container
+          name: container4
+          layout:
+            columnSize: 1.6756993006993006
+          children:
+            - component: PageRow
+              name: pageRow10
+              children:
+                - component: TextField
+                  name: textField
+                  layout:
+                    columnSize: 1
+                    horizontalAlign: start
+                  props:
+                    variant: outlined
+                    label: 请输入
+                    fullWidth: true
+        - component: Container
+          name: container1
+          layout:
+            columnSize: 0.3243006993006993
+          children:
+            - component: PageRow
+              name: pageRow5
+              children:
+                - component: Button
+                  name: button
+                  layout:
+                    horizontalAlign: end
+                  props:
+                    content: 搜索
+                    size: large
+                    onClick:
+                      $$jsExpressionAction: search
+    - component: PageRow
+      name: pageRow8
+      children:
+        - component: DataGrid
+          name: dataGrid1
+          props:
+            rows:
+              $$jsExpression: |
+                query.data
+            columns:
+              - field: "0"
+                type: string
+              - field: "1"
+                type: json
+    - component: PageRow
+      name: pageRow9
+      children:
+        - component: Image
+          name: image3
+          props:
+            src:
+              $$jsExpression: |
+                imageQuery.data.message
+  queries:
+    - name: query
+      query:
+        kind: rest
+        url: https://dog.ceo/api/breeds/list/all
+        headers: []
+        method: GET
+        transform: return Object.entries(data.message);
+        transformEnabled: true
+        searchParams: []
+    - name: imageQuery
+      query:
+        kind: rest
+        url:
+          $$jsExpression: |
+            `https://dog.ceo/api/breed/${parameters.breed}/images/random`
+        headers: []
+        method: GET
+        searchParams: []
+      parameters:
+        - name: breed
+          value:
+            $$jsExpression: |
+              dataGrid.selection?.[0] ?? "akita"
+    - name: search
+      query:
+        kind: rest
+        url: https://dog.ceo/api/breeds/list/all
+        headers: []
+        method: GET
+        transform: return [{name:'dale'},{name:'hahha'}]
+        transformEnabled: true
+        searchParams: []
+      parameters:
+        - name: params
+          value:
+            $$jsExpression: |
+              textField.value
+  parameters:
+    - name: haveData
+      value: "false"

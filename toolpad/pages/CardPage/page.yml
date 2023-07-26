@@ -25,6 +25,6 @@ spec:
             title: 品牌名称
             description: 商品重量
             add: true
-            isEdit: true
             isDetail: true
             style: card
+            isEdit: true

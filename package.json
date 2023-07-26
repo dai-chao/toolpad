@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "toolpad dev",
     "build": "toolpad build",
-    "start": "toolpad start"
+    "start": "toolpad start --port=3001"
   },
   "dependencies": {
     "@mui/toolpad": "^0.1.21",

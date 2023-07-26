@@ -31,21 +31,24 @@ export interface CardProps {
 }
 function CardView({ rows = [], style, loading, search, add, selectDataList, image, title, description, isEdit, isDetail }: CardProps) {
     const [form] = Form.useForm();
-    // const [isEdit, setIsEdit] = useState(false)
-    const [editdata, setEditData] = useState({})
-    const [detailData, setDetailData] = useState({})
-    const [detailFlag, setDetailFlag] = useState(false)
-    const [modaleTitle, setModaleTitle] = useState('')
-    const [addSpin, setAddSpin] = useState(false)
-    const [keyWords, setKeyWords] = useState('')
-    const [rowData, setRowData] = useState(JSON.parse(JSON.stringify(rows)))
-    const [rowNewData, setRowNewData] = useState(JSON.parse(JSON.stringify(rows)))
-    const [addModuleFlag, setAddModuleFlag] = useState(false)
-    const [column, setColumn] = useState([])
-    const [imageKey, setImageKey] = useState('img')
-    const [titleKey, setTitleKey] = useState('title')
-    const [descriptionKey, setDescriptionKey] = useState('desc')
+    const [pageLoading, setPageLoading] = useState(false)
+    const [editdata, setEditData] = useState({}) //编辑的数据
+    const [detailData, setDetailData] = useState({}) //详情数据
+    const [detailFlag, setDetailFlag] = useState(false) //控制详情展示隐藏
+    const [modaleTitle, setModaleTitle] = useState('') // 新增编辑弹窗的标题
+    const [addSpin, setAddSpin] = useState(false) // 新增的loading
+    const [keyWords, setKeyWords] = useState('') // 搜索关键字
+    const [rowData, setRowData] = useState(JSON.parse(JSON.stringify(rows))) //数据源
+    const [rowNewData, setRowNewData] = useState(JSON.parse(JSON.stringify(rows)))//数据源
+    const [addModuleFlag, setAddModuleFlag] = useState(false)//控制新增编辑弹窗
+    const [column, setColumn] = useState([]) //表数据
+    const [imageKey, setImageKey] = useState('img') //图片字段名
+    const [titleKey, setTitleKey] = useState('title') //标题字段名
+    const [descriptionKey, setDescriptionKey] = useState('desc') //描述字段名
 
+    /**
+     * 请求下拉列表
+    */
     useEffect(() => {
         getTableList(qs.stringify({
             userid: 'qh0279qr',
@@ -63,24 +66,34 @@ function CardView({ rows = [], style, loading, search, add, selectDataList, imag
         })
     }, [])
 
+    /**
+     * 图片字段名发生变化
+    */
     useEffect(() => {
         let list: any = column.filter((item: any) => item.column_label === image)
         setImageKey(list[0]?.column_id)
     })
-
+    /**
+     * 标题字段名发生变化
+    */
     useEffect(() => {
         let list: any = column.filter((item: any) => item.column_label === title)
         setTitleKey(list[0]?.column_id)
     })
-
+    /**
+     * 描述字段名发生变化
+    */
     useEffect(() => {
         let list: any = column.filter((item: any) => item.column_label === description)
         setDescriptionKey(list[0]?.column_id)
     })
-
+    /**
+     * 请求列表数据
+    */
     const getList = () => {
+        setPageLoading(true)
         if (selectDataList) {
-            let list = tableList.filter((item) => item?.title === selectDataList)
+            let list: any = tableList.filter((item: any) => item?.title === selectDataList)
             // console.log(list);
             getData({
                 "user_id": "qh0279qr",
@@ -100,10 +113,13 @@ function CardView({ rows = [], style, loading, search, add, selectDataList, imag
                 column.map((item: any) => {
                     bindList.push(item.column_label)
                 })
-            })
+            }).catch(err=>{})
+            .finally(()=>{setPageLoading(false)})
         }
     }
-
+    /**
+     * 表数据变化请求数据
+    */
     useEffect(() => {
         getList()
     }, [selectDataList])
@@ -119,6 +135,9 @@ function CardView({ rows = [], style, loading, search, add, selectDataList, imag
     //     setIsEdit(!showOperate)
     // }, [])
 
+    /**
+     * 控制详情展示
+    */
     const toDetail = (e: any) => {
         if (!isDetail) return
         setDetailData(e)
@@ -126,11 +145,15 @@ function CardView({ rows = [], style, loading, search, add, selectDataList, imag
         // localStorage.setItem('CARD_DETAIL_PARAMS', JSON.stringify(e))
         // onClick()
     }
-
+    /**
+     * 存储搜索关键字
+    */
     const inputChange = (e: any) => {
         setKeyWords(e.target.value)
     }
-    //搜索
+    /**
+     * 发起搜索
+    */
     const query = () => {
         if (keyWords) {
             let data = rowNewData.filter((i: any) => i[titleKey] == keyWords)
@@ -139,6 +162,10 @@ function CardView({ rows = [], style, loading, search, add, selectDataList, imag
             setRowData(rowNewData)
         }
     }
+
+    /**
+     * 插入数据
+    */
     const addData = () => {
         setModaleTitle('新增数据')
         setAddModuleFlag(true)
@@ -146,6 +173,9 @@ function CardView({ rows = [], style, loading, search, add, selectDataList, imag
         form.resetFields()
     }
 
+    /**
+     * 提交数据到后台
+    */
     const onFinish = (values: any) => {
         setAddSpin(true)
         const { img, title, desc } = values
@@ -202,7 +232,9 @@ function CardView({ rows = [], style, loading, search, add, selectDataList, imag
         }
 
     };
-
+    /**
+     * 编辑 打开弹窗写入数据
+    */
     const edit = (data: any) => {
         setModaleTitle("编辑数据")
         setAddModuleFlag(true)
@@ -213,7 +245,9 @@ function CardView({ rows = [], style, loading, search, add, selectDataList, imag
             desc: data[descriptionKey],
         })
     }
-
+    /**
+     * 按照不同 style 创建 DOM 
+    */
     const DOM = style === 'card' ?
         <div className='card_wrap'>
             {
@@ -269,6 +303,10 @@ function CardView({ rows = [], style, loading, search, add, selectDataList, imag
                 })
             }
         </div>
+    
+    /**
+     * 根据不同style创建骨架屏 
+    */
     const SKELETON = style === 'list' ? (
         <div>
             {
@@ -336,7 +374,7 @@ function CardView({ rows = [], style, loading, search, add, selectDataList, imag
             </div>
         }
         {
-            Array.isArray(rowData) && rowData.length > 0 && !detailFlag ? (loading ? SKELETON : DOM) : (detailFlag ? null : <Empty />)
+            Array.isArray(rowData) && rowData.length > 0 && !detailFlag ? (pageLoading ? SKELETON : DOM) : (detailFlag ? null : <Empty />)
         }
         <BackTop>
             <div style={{
@@ -428,10 +466,10 @@ export default createComponent(CardView, {
             enum: ['card', 'list'],
             default: 'card',
         },
-        loading: {
-            type: 'boolean',
-            default: false
-        },
+        // loading: {
+        //     type: 'boolean',
+        //     default: false
+        // },
         search: {
             type: 'boolean',
             default: false
